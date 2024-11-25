@@ -22,6 +22,7 @@ The library has the following objectives:
 * Should be able to reasonably support legacy OS such as Windows NT 4, at least with a limited set of functions.
 
 Usage:
+* Include "TinyTRL.h" in your header and/or source file.
 * Templates can be used just by adding "include" directory to the project.
 * Classes such as String require the appropriate ".cpp" files to be added to the project from "src" directory.
 * See existing examples for more information.
