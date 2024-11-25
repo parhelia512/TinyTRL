@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="TinyTRL">
+      <UniqueIdentifier>{18f18df2-b2ef-4d26-9958-de2821e6bfe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TinyTRL\Source Files">
+      <UniqueIdentifier>{fbb8446e-82c9-42a7-8abb-0525a604c341}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Arrays.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\TinyTRL_Math.cpp">
+      <Filter>TinyTRL\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\TinyTRL_Strings.cpp">
+      <Filter>TinyTRL\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\TinyTRL_Timing.cpp">
+      <Filter>TinyTRL\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
