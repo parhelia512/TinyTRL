@@ -1,12 +1,12 @@
 # TinyTRL
 Tiny Template and Runtime Library (TinyTRL) is a compact and efficient Standard C++ Library (STL) replacement.
-The library is cross-platform and is meant to be used with GCC, Clang or MSVC.
+The library is cross-platform and meant to be used with GCC, Clang or MSVC, targeting C++20 or later.
 
 The following templates, classes and functions are provided:
 * Array - a general-purpose dynamic resizeable array.
 * FlatMap - associative container between key and values using a sorted array as storage.
 * FlatSet - a set of unique values using a sorted array as storage.
-* String - string class that handles Ascii or UTF-8 encoded strings with Short String Optimization and ability to "wrap" existing C strings without copying.
+* String - string class that handles Ascii or UTF-8 encoded strings with Short String Optimization, and ability to "wrap" existing C strings without copying.
 * WideString - UTF-16 string class mostly for calling Windows API with automatic conversion to/from String.
 * Numerous string utilities for text comparison, search and replacement.
 * Functions for working with file paths and extensions.
