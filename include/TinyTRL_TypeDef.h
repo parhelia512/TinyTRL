@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-// ttrl/typedef.h
+// TinyTRL_TypeDef.h
 #pragma once
 
 #include <cassert>
@@ -57,7 +57,7 @@
 #endif
 
 #ifdef _MSC_VER
-  // Framework uses boolean bit flags by design, supress MSVC warning about it.
+  // Framework uses boolean bit flags by design, suppress MSVC warning about it.
   #pragma warning(disable: 4800)
 
   // Disable useless CRT security warnings.

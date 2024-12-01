@@ -19,7 +19,7 @@
 using namespace trl;
 
 // Example showing how to work with arrays of integers.
-void exampleIntegerArray()
+static void exampleIntegerArray()
 {
   // Initialize array with some values.
   Array<int32_t> values = {25, 100, 75};
@@ -74,7 +74,7 @@ void exampleIntegerArray()
 }
 
 // Example showing how to work with arrays of strings.
-void exampleStringArray()
+static void exampleStringArray()
 {
   // Initialize array with some names.
   Array<String> names = {"Camila", "Aurora", "Penelope", "Lucy", "Naomi"};
@@ -132,7 +132,7 @@ void exampleStringArray()
 }
 
 // Another example showing how to work with arrays of strings.
-void exampleStringArray2()
+static void exampleStringArray2()
 {
   // Initialize array with the names of some cities and towns in Greenland.
   Array<String> cities = {"Nuuk", "paamiut", "Sisimiut", "aasiaat", "Upernavik", "saattut"};

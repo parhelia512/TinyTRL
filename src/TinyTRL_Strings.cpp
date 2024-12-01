@@ -232,8 +232,7 @@ String String::Wrap(char const* const string, Length length)
     {
       // Either length must be set to zero to autocalculate, or it must match the size of wrapped string,
       // and such string must be properly null-terminated.
-      assert(length == 0 || (string[length] == 0 &&
-        utility::calculateLength(string) == static_cast<size_t>(length)));
+      assert(length == 0 || (string[length] == 0 && utility::calculateLength(string) == length));
 
       if (length == 0)
         length = utility::calculateLength(string);

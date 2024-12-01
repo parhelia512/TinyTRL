@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\TinyTRL_Math.cpp" />
+    <ClCompile Include="..\..\..\src\TinyTRL_Streams.cpp" />
     <ClCompile Include="..\..\..\src\TinyTRL_Strings.cpp" />
     <ClCompile Include="..\..\..\src\TinyTRL_Timing.cpp" />
     <ClCompile Include="..\..\src\Arrays.cpp" />

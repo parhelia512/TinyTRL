@@ -19,7 +19,7 @@
 using namespace trl;
 
 // Example showing how to work with flat map containing user names and passwords.
-void exampleFlatMapPasswords()
+static void exampleFlatMapPasswords()
 {
   // Designate a meaningful name for the pair of strings denoting user and password.
   using UserPassword = Containers::Pair<String, String>;
@@ -51,6 +51,12 @@ void exampleFlatMapPasswords()
   if (!passwords)
     printf("One or more operations failed, possibly due to being out of memory.\n");
 
+  // Retrieve user's password.
+  if (String const* const password = passwords.value("henry"))
+    printf("Henry's password is: %s\n", password->data());
+  else
+    printf("User 'henry' does not exist.\n");
+
   // Display contents of our passwords.
   printf("Users and their passwords: \n");
 
@@ -69,7 +75,7 @@ void exampleFlatMapPasswords()
 }
 
 // Example showing how to work with flat set containing numbers.
-void exampleFlatSetOfNumbers()
+static void exampleFlatSetOfNumbers()
 {
   // Start with a small set of numbers.
   FlatSet<int32_t> numbers = {15, 25, 35};

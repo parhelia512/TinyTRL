@@ -18,3 +18,4 @@
 #include "TinyTRL_Containers.h"
 #include "TinyTRL_Strings.h"
 #include "TinyTRL_Timing.h"
+#include "TinyTRL_Streams.h"

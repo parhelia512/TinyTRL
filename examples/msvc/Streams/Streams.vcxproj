@@ -23,13 +23,13 @@
     <ClCompile Include="..\..\..\src\TinyTRL_Streams.cpp" />
     <ClCompile Include="..\..\..\src\TinyTRL_Strings.cpp" />
     <ClCompile Include="..\..\..\src\TinyTRL_Timing.cpp" />
-    <ClCompile Include="..\..\src\FlatMapsAndSets.cpp" />
+    <ClCompile Include="..\..\src\Streams.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{D7F37104-E8CC-4747-8C93-B702CAFF8B2F}</ProjectGuid>
-    <RootNamespace>FlatMapsAndSets</RootNamespace>
+    <ProjectGuid>{B9CBFFEB-5C7F-4EEE-A553-303BD7ADA3C4}</ProjectGuid>
+    <RootNamespace>Streams</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
