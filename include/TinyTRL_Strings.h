@@ -110,8 +110,8 @@ public:
 
   /// Creates a new string instance wrapping an existing C null-terminated string. If \c length is greater
   /// than zero, then it should contain an actual string length that must match output of "strlen".
-  /// If a string to be wrapped fits into a short string, then it will be copied. Note: providing invalid
-  /// parameters pollutes the string.
+  /// If a string to be wrapped fits into a short string, or is not properly aligned, then it will be copied.
+  /// Note: providing invalid parameters pollutes the string.
   [[nodiscard]] static String Wrap(char const* string, Length length = 0);
 
 #if __cplusplus > 201811L

@@ -56,7 +56,7 @@ String::String(char const* const string)
 {
   if (string)
   {
-    size_t const length = ::strlen(string);
+    size_t const length = utility::calculateLength(string);
     if (length <= static_cast<size_t>(MaxLength))
     {
       if (this->length(static_cast<Length>(length)))
@@ -232,19 +232,24 @@ String String::Wrap(char const* const string, Length length)
     {
       // Either length must be set to zero to autocalculate, or it must match the size of wrapped string,
       // and such string must be properly null-terminated.
-      assert(length == 0 || (string[length] == 0 && ::strlen(string) == static_cast<size_t>(length)));
-
-      // The wrapped pointer must meet alignment requirements.
-      assert(!(reinterpret_cast<uintptr_t>(string) % alignof(String)));
+      assert(length == 0 || (string[length] == 0 &&
+        utility::calculateLength(string) == static_cast<size_t>(length)));
 
       if (length == 0)
-        length = ::strlen(string); // Calculate length of source C string.
+        length = utility::calculateLength(string);
 
       if (length <= ShortCapacity)
-      { // Wrapped string fits as a short string, no need to wrap it.
+      { // The provided string qualifies as a short string, so does not require wrapping.
         // Note: no need to copy null character as string should be pre-filled with zeros anyway.
         ::memcpy(res._bytes, string, static_cast<size_t>(length));
         res._bytes[ShortLengthOffset] = static_cast<uint8_t>(length);
+      }
+      else if (reinterpret_cast<uintptr_t>(string) % alignof(String))
+      { // Pointer does not have correct alignment, a copy of the string has to be created.
+        if (res.length(length))
+          ::memcpy(res._chars, string, static_cast<size_t>(length + NullLength));
+        else
+          res.pollute();
       }
       else
       { // Wrap an existing null-terminated C string with a known length.
@@ -1309,7 +1314,7 @@ WideString::WideString(char const* string)
 {
   if (string)
   {
-    Length const length = ::strlen(string);
+    Length const length = utility::calculateLength(string);
     Length wideLength = utility::convertUTF8ToUTF16(nullptr, string, length);
 
     if (wideLength > MaxLength)
@@ -1808,9 +1813,14 @@ unsigned char lowerCase(unsigned char const charCode)
   return charCode >= 65u && charCode <= 90u ? charCode + 32u : charCode;
 }
 
-String::Length calculateLength(char const* string, String::Length const length)
+String::Length calculateLength(char const* string, String::Length length)
 {
-  assert(string && length > 0);
+  if (!string)
+    return 0;
+
+  if (length <= 0)
+    length = String::MaxLength;
+
   String::Length count = 0;
   for (; *string && count < length; ++string)
     ++count;
